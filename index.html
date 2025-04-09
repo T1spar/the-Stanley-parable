@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Illusion of Choice – Postmodern Analysis of The Stanley Parable</title>
 
-  <!-- ======================== FONTS ======================== -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- ======================== BASE STYLES ======================== -->
   <style>
     :root {
       --bg-dark: #1e1e2f;
@@ -21,59 +20,53 @@
       --max-width: 1100px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
-    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; margin-bottom: .5rem; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { color: var(--accent-light); }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:var(--bg-dark);color:var(--text-light);line-height:1.6}
+    h1,h2,h3,h4{font-family:'Montserrat',sans-serif;margin-bottom:.5rem}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{color:var(--accent-light)}
 
-    /* ================= NAVBAR ================= */
-    header { position: sticky; top: 0; z-index: 100; background: rgba(30,30,47,.85); backdrop-filter: blur(6px); }
-    nav { max-width: var(--max-width); margin: 0 auto; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
-    .nav-links { display: flex; gap: 1.25rem; font-weight: 600; letter-spacing: .4px; }
+    /* Navbar */
+    header{position:sticky;top:0;z-index:100;background:rgba(30,30,47,.85);backdrop-filter:blur(6px)}
+    nav{max-width:var(--max-width);margin:0 auto;padding:1rem;display:flex;justify-content:space-between;align-items:center}
+    .nav-links{display:flex;gap:1.25rem;font-weight:600;letter-spacing:.4px}
 
-    /* ================= HERO ================= */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 1rem;
-      background: url('assets/images/hero.jpg') center/cover no-repeat fixed;
-      color: var(--text-light);
-    }
-    .hero::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,.6); }
-    .hero-content { position: relative; z-index:1; max-width: 800px; }
-    .hero h1 { font-size: clamp(2.2rem,6vw,3.5rem); font-weight: 800; line-height:1.15; }
-    .hero h2 { font-size: clamp(1.1rem,3vw,1.5rem); font-weight:400; margin-top:.75rem; }
-    .meta { margin-top:1.25rem; font-size:.9rem; opacity:.8; letter-spacing:.5px; }
-    .btn { background: var(--accent); color: var(--bg-dark); padding:.8rem 1.7rem; border-radius:8px; font-weight:700; transition:background .2s ease; display:inline-block; margin-top:2rem; }
-    .btn:hover { background: var(--accent-light); }
+    /* Hero */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 1rem;background:url('assets/images/hero.jpg') center/cover no-repeat fixed;color:var(--text-light)}
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.6)}
+    .hero-content{position:relative;z-index:1;max-width:800px}
+    .hero h1{font-size:clamp(2.2rem,6vw,3.5rem);font-weight:800;line-height:1.15}
+    .hero h2{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:400;margin-top:.75rem}
+    .meta{margin-top:1.25rem;font-size:.9rem;opacity:.8;letter-spacing:.5px}
+    .btn{background:var(--accent);color:var(--bg-dark);padding:.8rem 1.7rem;border-radius:8px;font-weight:700;transition:background .2s ease;display:inline-block;margin-top:2rem}
+    .btn:hover{background:var(--accent-light)}
 
-    /* ================= SECTIONS ================= */
-    section { padding:4rem 1rem; max-width: var(--max-width); margin:0 auto; }
+    /* Sections */
+    section{padding:4rem 1rem;max-width:var(--max-width);margin:0 auto}
 
-    /* QUIZ */
-    #quiz { background: var(--bg-light); padding:2rem; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,.4); }
-    .question { margin-bottom:1rem; }
-    .answers label { display:block; margin-bottom:.25rem; cursor:pointer; }
-    #quiz-result { margin-top:1.5rem; font-weight:600; font-size:1.2rem; color:var(--accent); }
+    /* Intro image */
+    .intro-img{width:100%;border-radius:10px;margin:1.5rem 0}
 
-    /* GALLERY */
-    .gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem; }
-    .gallery img { width:100%; border-radius:10px; }
+    /* Quiz */
+    #quiz{background:var(--bg-light);padding:2rem;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+    .question{margin-bottom:1rem}
+    .answers label{display:block;margin-bottom:.25rem;cursor:pointer}
+    #quiz-result{margin-top:1.5rem;font-weight:600;font-size:1.2rem;color:var(--accent)}
 
-    footer { text-align:center; padding:2rem 1rem; font-size:.875rem; background: var(--bg-light); }
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+    .gallery img{width:100%;border-radius:10px}
+
+    footer{text-align:center;padding:2rem 1rem;font-size:.875rem;background:var(--bg-light)}
   </style>
 </head>
 <body>
-  <!-- ================= NAVBAR ================= -->
+  <!-- Navbar -->
   <header>
     <nav>
       <a href="#home"><strong>The Stanley Parable</strong></a>
       <div class="nav-links">
+        <a href="#intro">Intro</a>
         <a href="#analysis">Analysis</a>
         <a href="#quiz-section">Quiz</a>
         <a href="#media">Media</a>
@@ -82,26 +75,41 @@
     </nav>
   </header>
 
-  <!-- ================= HERO ================= -->
+  <!-- Hero -->
   <section id="home" class="hero">
     <div class="hero-content">
       <h1>The Illusion of Choice</h1>
       <h2>A Postmodern Journey through <em>The Stanley Parable</em></h2>
       <p class="meta">Interactive Analysis by Shi Xuyuan  |  Apr 2025</p>
-      <a href="#analysis" class="btn">Enter the Narrative</a>
+      <a href="#intro" class="btn">Begin</a>
     </div>
   </section>
 
-  <!-- ================= ANALYSIS ================= -->
+  <!-- Introduction -->
+  <section id="intro">
+    <h2>What Is <em>The Stanley Parable</em>?</h2>
+    <p><em>The Stanley Parable</em> is a 2013 first‑person “walking simulator” developed by Galactic Café. Walking simulators are narrative‑driven games that focus on exploration and story rather than combat or complex mechanics. Players move through environments, uncovering plot details at their own pace.</p>
+
+    <h3>Basic Premise</h3>
+    <p>You play as Stanley, Employee 427, who realises one day that all his co‑workers have vanished. A disembodied Narrator describes everything Stanley is “supposed” to do—but you can obey, disobey, or wander off entirely. Every decision branches the story into different endings that comment on free will, conformity, and the nature of storytelling itself.</p>
+
+    <h3>Choice Structure</h3>
+    <p>Despite dozens of possible endings, the game reveals that every path was pre‑written. Your apparent freedom is part of the design, challenging the player to question whether choice in games (and life) is real or illusory.</p>
+
+    <img src="assets/images/map_choice.jpg" alt="Flowchart of narrative choices in The Stanley Parable" class="intro-img">
+    <p class="caption">A fan‑made map (uploaded by me) visualising most decision paths in the game.</p>
+  </section>
+
+  <!-- Analysis -->
   <section id="analysis">
     <h2>Critical Analysis</h2>
 
     <h3>1. Postmodern Lens</h3>
-    <p><strong>Breaking the Fourth Wall & Hyperreality:</strong> The narrator addresses the player directly, making the game aware of its own fictionality. This self‑reference forces players to question the boundaries between the game world and their reality.</p>
+    <p><strong>Breaking the Fourth Wall & Hyperreality:</strong> The Narrator addresses the player directly, making the game aware of its own fictionality. This self‑reference forces players to question the boundaries between the game world and their reality.</p>
     <p><strong>Illusion of Free Will:</strong> No matter which hallway the player chooses, the game has already scripted the outcomes. The sense of agency is exposed as theatrical—echoing postmodern skepticism toward grand narratives of autonomy.</p>
 
     <h3>2. Societal Context</h3>
-    <p>The early 2010s saw growing cultural anxiety about corporate monotony and the algorithmic shaping of human behavior. <em>The Stanley Parable</em> channels that unease, portraying an office drone trapped in pre‑ordained loops.</p>
+    <p>The early 2010s saw growing cultural anxiety about corporate monotony and the algorithmic shaping of human behaviour. <em>The Stanley Parable</em> channels that unease, portraying an office drone trapped in pre‑ordained loops.</p>
 
     <h3>3. Intertextual Connections</h3>
     <ul>
@@ -116,17 +124,17 @@
     <p>This project taught me that postmodern texts invite audiences to co‑create meaning. By translating my analysis into a website, I mirror the game’s invitation for players to click, explore, and confront their own interpretive choices.</p>
   </section>
 
-  <!-- ================= QUIZ ================= -->
+  <!-- Quiz -->
   <section id="quiz-section">
     <h2>Test Your Free Will</h2>
     <p>Answer the following questions to see how well you grasp the postmodern tricks inside <em>The Stanley Parable</em>.</p>
 
     <div id="quiz">
       <div class="question" data-answer="b">
-        <h4>1. When the narrator says, “Stanley went through the left door,” what happens if you choose the right door?</h4>
+        <h4>1. When the Narrator says, “Stanley went through the left door,” what happens if you choose the right door?</h4>
         <div class="answers">
           <label><input type="radio" name="q1" value="a" /> The game ends instantly</label>
-          <label><input type="radio" name="q1" value="b" /> The narrator reacts and rewrites the story</label>
+          <label><input type="radio" name="q1" value="b" /> The Narrator reacts and rewrites the story</label>
           <label><input type="radio" name="q1" value="c" /> Nothing unusual; the story continues normally</label>
         </div>
       </div>
@@ -135,32 +143,4 @@
         <h4>2. Which postmodern concept is MOST central to the game?</h4>
         <div class="answers">
           <label><input type="radio" name="q2" value="a" /> Romantic idealism</label>
-          <label><input type="radio" name="q2" value="b" /> Realist determinism</label>
-          <label><input type="radio" name="q2" value="c" /> Hyperreality and metafiction</label>
-        </div>
-      </div>
-
-      <div class="question" data-answer="a">
-        <h4>3. The office setting primarily symbolizes…</h4>
-        <div class="answers">
-          <label><input type="radio" name="q3" value="a" /> Repetitive corporate monotony</label>
-          <label><input type="radio" name="q3" value="b" /> A utopian future of work</label>
-          <label><input type="radio" name="q3" value="c" /> Historical nostalgia for 1950s business culture</label>
-        </div>
-      </div>
-
-      <button id="submit-quiz" class="btn" style="margin-top:1rem;">Submit Answers</button>
-      <div id="quiz-result"></div>
-    </div>
-  </section>
-
-  <!-- ================= MEDIA GALLERY ================= -->
-  <section id="media">
-    <h2>Gameplay & Media</h2>
-    <p>These screenshots illustrate key moments. Replace alt text to describe each image.</p>
-
-    <div class="gallery">
-      <img src="assets/images/1.jpg" alt="Gameplay screenshot 1" />
-      <img src="assets/images/2.jpg" alt="Gameplay screenshot 2" />
-      <img src="assets/images/3.jpg" alt="Gameplay screenshot 3" />
-      <img src="assets/images/4.jpg" alt
+          <label><input type="radio" name="q2" value
