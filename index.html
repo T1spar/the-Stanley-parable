@@ -49,13 +49,14 @@
 
     /* Quiz */
     #quiz{background:var(--bg-light);padding:2rem;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.4)}
-    .question{margin-bottom:1rem}
+    .question{margin-bottom:1.25rem}
+    .question h4{margin-bottom:.5rem}
     .answers label{display:block;margin-bottom:.25rem;cursor:pointer}
     #quiz-result{margin-top:1.5rem;font-weight:600;font-size:1.2rem;color:var(--accent)}
 
     /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
-    .gallery img{width:100%;border-radius:10px}
+    .gallery img,.gallery video{width:100%;border-radius:10px}
 
     footer{text-align:center;padding:2rem 1rem;font-size:.875rem;background:var(--bg-light)}
   </style>
@@ -97,7 +98,7 @@
     <p>Despite dozens of possible endings, the game reveals that every path was pre‑written. Your apparent freedom is part of the design, challenging the player to question whether choice in games (and life) is real or illusory.</p>
 
     <img src="assets/images/map_choice.jpg" alt="Flowchart of narrative choices in The Stanley Parable" class="intro-img">
-    <p class="caption">A fan‑made map (uploaded by me) visualising most decision paths in the game.</p>
+    <p class="caption">A fan‑made map visualising most decision paths in the game.</p>
   </section>
 
   <!-- Analysis -->
@@ -143,4 +144,14 @@
         <h4>2. Which postmodern concept is MOST central to the game?</h4>
         <div class="answers">
           <label><input type="radio" name="q2" value="a" /> Romantic idealism</label>
-          <label><input type="radio" name="q2" value
+          <label><input type="radio" name="q2" value="b" /> Realist determinism</label>
+          <label><input type="radio" name="q2" value="c" /> Hyperreality and metafiction</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="a">
+        <h4>3. The office setting primarily symbolizes…</h4>
+        <div class="answers">
+          <label><input type="radio" name="q3" value="a" /> Repetitive corporate monotony</label>
+          <label><input type="radio" name="q3" value
+
