@@ -1,1 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Stanley Parable – Postmodern Analysis</title>
 
+  <!-- ========================
+       Fonts & Icons
+  ========================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-pE8CqkX2+7JgX0sYbqI7hEYctIv7WxExVb32xqgDkO/++e0zTwP4v5F8ZP9H+ExJTNXk+6KXn9j7JjEW5zGyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- ========================
+       Base Styles
+  ========================= -->
+  <style>
+    :root {
+      --bg-dark: #1e1e2f;
+      --bg-light: #2b2b40;
+      --text-light: #ffffff;
+      --accent: #ffb400;
+      --accent-light: #ffd773;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { color: var(--accent-light); }
+
+    /* ===== NAVBAR ===== */
+    header {
+      background: var(--bg-light);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,.4);
+    }
+
+    nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 4rem 1rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+    }
+
+    .btn {
+      background: var(--accent);
+      color: var(--bg-dark);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: background 0.2s ease;
+      display: inline-block;
+    }
+    .btn:hover { background: var(--accent-light); }
+
+    /* ===== QUIZ ===== */
+    #quiz {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.4);
+    }
+    .question {
+      margin-bottom: 1rem;
+    }
+    .question h4 {
+      margin-bottom: 0.5rem;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 0.25rem;
+      cursor: pointer;
+    }
+    #quiz-result {
+      margin-top: 1.5rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    /* ===== MEDIA GALLERY ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img, .gallery video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+      background: var(--bg-light);
+    }
+  </style>
+</head>
+<body>
+  <!-- ================ NAVBAR ================= -->
+  <header>
+    <nav>
+      <a href="#home"><strong>The Stanley Parable</strong></a>
+      <div class="nav-links">
+        <a href="#analysis">Analysis</a>
+        <a href="#quiz-section">Quiz</a>
+        <a href="#media">Media</a>
+        <a href="#works">Works Cited</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================ HERO / HOME ================= -->
+  <section id="home" class="hero">
+    <h1>The Illusion of Choice</h1>
+    <p>An interactive postmodern analysis of <em>The Stanley Parable</em> (2013) by Shi Xuyuan.</p>
+    <a href="#analysis" class="btn">Start Exploring</a>
+  </section>
+
+  <!-- ================ ANALYSIS ================= -->
+  <section id="analysis">
+    <h2>Critical Analysis</h2>
+
+    <h3>1. Postmodern Lens</h3>
+    <p><strong>Breaking the Fourth Wall & Hyperreality:</strong> The narrator addresses the player directly, making the game aware of its own fictionality. This self‑reference forces players to question the boundaries between the game world and their reality.</p>
+    <p><strong>Illusion of Free Will:</strong> No matter which hallway the player chooses, the game has already scripted the outcomes. The sense of agency is exposed as theatrical—echoing postmodern skepticism toward grand narratives of autonomy.</p>
+
+    <h3>2. Societal Context</h3>
+    <p>The early 2010s saw growing cultural anxiety about corporate monotony and the algorithmic shaping of human behavior. <em>The Stanley Parable</em> channels that unease, portraying an office drone trapped in pre‑ordained loops.</p>
+
+    <h3>3. Intertextual Connections</h3>
+    <ul>
+      <li><em>The Truman Show</em> (1998) – another protagonist whose life is secretly scripted.</li>
+      <li>George Orwell’s <em>1984</em> – surveillance and manipulation of perceived reality.</li>
+    </ul>
+
+    <h3>4. Themes & Tropes</h3>
+    <p>Unreliable narration, metafiction, existential dread, fragmentation of identity, parody of traditional game objectives.</p>
+
+    <h3>5. Reflection</h3>
+    <p>This project taught me that postmodern texts invite audiences to co‑create meaning. By translating my analysis into a website, I mirror the game’s invitation for players to click, explore, and confront their own interpretive choices.</p>
+  </section>
+
+  <!-- ================ QUIZ ================= -->
+  <section id="quiz-section">
+    <h2>Test Your Free Will</h2>
+    <p>Answer the following questions to see how well you grasp the postmodern tricks inside <em>The Stanley Parable</em>.</p>
+
+    <div id="quiz">
+      <div class="question" data-answer="b">
+        <h4>1. When the narrator says, “Stanley went through the left door,” what happens if you choose the right door?</h4>
+        <div class="answers">
+          <label><input type="radio" name="q1" value="a" /> The game ends instantly</label>
+          <label><input type="radio" name="q1" value="b" /> The narrator reacts and rewrites the story</label>
+          <label><input type="radio" name="q1" value="c" /> Nothing unusual; the story continues normally</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="c">
+        <h4>2. Which postmodern concept is MOST central to the game?</h4>
+        <div class="answers">
+          <label><input type="radio" name="q2" value="a" /> Romantic idealism</label>
+          <label><input type="radio" name="q2" value="b" /> Realist determinism</label>
+          <label><input type="radio" name="q2" value="c" /> Hyperreality and metafiction</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="a">
+        <h4>3. The office setting primarily symbolizes…</h4>
+        <div class="answers">
+          <label><input type="radio" name="q3" value="a" /> Repetitive corporate monotony</label>
+          <label><input type="radio" name="q3" value="b" /> A utopian future of work</label>
+          <label><input type="radio" name="q3" value="c" /> Historical nostalgia for 1950s business culture</label>
+        </div>
+      </div>
+
+      <button id="submit-quiz" class="btn" style="margin-top:1rem;">Submit Answers</button>
+      <div id="quiz-result"></div>
+    </div>
+  </section>
+
+  <!-- ================ MEDIA GALLERY ================= -->
+  <section id="media">
+    <h2>Gameplay & Media</h2>
+    <p>Below are short clips and images demonstrating key moments. Replace the placeholders with your own files in <code>assets/images</code> or <code>assets/video</code>.</p>
+
+    <div class="gallery">
+      <!-- ===== Replace src values with your own files ===== -->
+      <img src="assets/images/broom_closet.jpg" alt="Stanley in the broom closet" />
+      <video controls src="assets/video/choice_loop.mp4"></video>
+      <img src="assets/images/mind_control_facility.jpg" alt="Mind Control Facility" />
+      <video controls src="assets/video/narrator_reacts.mp4"></video>
+    </div>
+  </section>
+
+  <!-- ================ WORKS CITED ================= -->
+  <section id="works">
+    <h2>Works Cited</h2>
+    <ol>
+      <li>Galactic Café. <em>The Stanley Parable</em>. PC, 2013.</li>
+      <li>Weir, Peter, director. <em>The Truman Show</em>. Paramount Pictures, 1998.</li>
+      <li>Orwell, George. <em>Nineteen Eighty‑Four</em>. Secker & Warburg, 1949.</li>
+      <!-- Add all additional academic or media sources here in MLA or APA format -->
+    </ol>
+  </section>
+
+  <footer>
+    Built with ❤️ by Shi Xuyuan | Hosted on GitHub Pages
+  </footer>
+
+  <!-- ========================
+       JavaScript
+  ========================= -->
+  <script>
+    /* ===== Simple Quiz Logic ===== */
+    const submitBtn = document.getElementById('submit-quiz');
+    const resultDiv = document.getElementById('quiz-result');
+
+    submitBtn.addEventListener('click', () => {
+      let score = 0;
+      const questions = document.querySelectorAll('#quiz .question');
+      questions.forEach(q => {
+        const correct = q.dataset.answer;
+        const selected = q.querySelector('input:checked');
+        if (selected && selected.value === correct) score++;
+      });
+      resultDiv.textContent = `You scored ${score} / ${questions.length}. ${score === questions.length ? 'Excellent!' : 'Try again to reach full enlightenment.'}`;
+    });
+  </script>
+</body>
+</html>
