@@ -5,17 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Stanley Parable – Postmodern Analysis</title>
 
-  <!-- ========================
-       Fonts & Icons
-  ========================= -->
+  <!-- ======================== FONTS ======================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-pE8CqkX2+7JgX0sYbqI7hEYctIv7WxExVb32xqgDkO/++e0zTwP4v5F8ZP9H+ExJTNXk+6KXn9j7JjEW5zGyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- ========================
-       Base Styles
-  ========================= -->
+  <!-- ======================== BASE STYLES ======================== -->
   <style>
     :root {
       --bg-dark: #1e1e2f;
@@ -27,74 +22,54 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-light);
-      line-height: 1.6;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 0.5rem;
-    }
-
+    body { font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; margin-bottom: .5rem; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { color: var(--accent-light); }
 
-    /* ===== NAVBAR ===== */
-    header {
-      background: var(--bg-light);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 4px rgba(0,0,0,.4);
-    }
-    nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
+    /* ================= NAVBAR ================= */
+    header { position: sticky; top: 0; z-index: 100; background: rgba(30,30,47,.85); backdrop-filter: blur(6px); }
+    nav { max-width: var(--max-width); margin: 0 auto; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
+    .nav-links { display: flex; gap: 1.25rem; font-weight: 600; letter-spacing: .4px; }
+
+    /* ================= HERO ================= */
+    .hero {
+      position: relative;
+      min-height: 100vh;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: center;
+      text-align: center;
       padding: 0 1rem;
+      background: url('assets/images/hero.jpg') center/cover no-repeat fixed;
+      color: var(--text-light);
     }
-    .nav-links { display: flex; gap: 1.25rem; }
-    .nav-links a { font-weight: 600; letter-spacing: 0.5px; }
-
-    /* ===== SECTIONS ===== */
-    section { padding: 4rem 1rem; max-width: var(--max-width); margin: 0 auto; }
-    .hero { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
-    .hero h1 { font-size: 2.5rem; color: var(--accent); }
-
-    .btn {
-      background: var(--accent);
-      color: var(--bg-dark);
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 700;
-      transition: background 0.2s ease;
-      display: inline-block;
-    }
+    .hero::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,.6); }
+    .hero-content { position: relative; z-index:1; max-width: 800px; }
+    .hero h1 { font-size: clamp(2.2rem,6vw,3.5rem); font-weight: 800; line-height:1.15; }
+    .hero h2 { font-size: clamp(1.1rem,3vw,1.5rem); font-weight:400; margin-top:.75rem; }
+    .meta { margin-top:1.25rem; font-size:.9rem; opacity:.8; letter-spacing:.5px; }
+    .btn { background: var(--accent); color: var(--bg-dark); padding:.8rem 1.7rem; border-radius:8px; font-weight:700; transition:background .2s ease; display:inline-block; margin-top:2rem; }
     .btn:hover { background: var(--accent-light); }
 
-    /* ===== QUIZ ===== */
-    #quiz { background: var(--bg-light); padding: 2rem; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,.4); }
-    .question { margin-bottom: 1rem; }
-    .question h4 { margin-bottom: 0.5rem; }
-    .answers label { display: block; margin-bottom: 0.25rem; cursor: pointer; }
-    #quiz-result { margin-top: 1.5rem; font-weight: 600; font-size: 1.2rem; color: var(--accent); }
+    /* ================= SECTIONS ================= */
+    section { padding:4rem 1rem; max-width: var(--max-width); margin:0 auto; }
 
-    /* ===== MEDIA GALLERY ===== */
-    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
-    .gallery img { width: 100%; border-radius: 10px; }
+    /* QUIZ */
+    #quiz { background: var(--bg-light); padding:2rem; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,.4); }
+    .question { margin-bottom:1rem; }
+    .answers label { display:block; margin-bottom:.25rem; cursor:pointer; }
+    #quiz-result { margin-top:1.5rem; font-weight:600; font-size:1.2rem; color:var(--accent); }
 
-    footer { text-align: center; padding: 2rem 1rem; font-size: 0.875rem; background: var(--bg-light); }
+    /* GALLERY */
+    .gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem; }
+    .gallery img { width:100%; border-radius:10px; }
+
+    footer { text-align:center; padding:2rem 1rem; font-size:.875rem; background: var(--bg-light); }
   </style>
 </head>
 <body>
-  <!-- ================ NAVBAR ================= -->
+  <!-- ================= NAVBAR ================= -->
   <header>
     <nav>
       <a href="#home"><strong>The Stanley Parable</strong></a>
@@ -107,14 +82,17 @@
     </nav>
   </header>
 
-  <!-- ================ HERO / HOME ================= -->
+  <!-- ================= HERO ================= -->
   <section id="home" class="hero">
-    <h1>The Illusion of Choice</h1>
-    <p>An interactive postmodern analysis of <em>The Stanley Parable</em> (2013) by Shi Xuyuan.</p>
-    <a href="#analysis" class="btn">Start Exploring</a>
+    <div class="hero-content">
+      <h1>The Stanley Parable review: the soul of wit</h1>
+      <h2>The game doesn’t last long, but it never lets up on laughs either</h2>
+      <p class="meta">By Shi Xuyuan  |  Apr 2025</p>
+      <a href="#analysis" class="btn">Start Exploring</a>
+    </div>
   </section>
 
-  <!-- ================ ANALYSIS ================= -->
+  <!-- ================= ANALYSIS ================= -->
   <section id="analysis">
     <h2>Critical Analysis</h2>
 
@@ -138,7 +116,7 @@
     <p>This project taught me that postmodern texts invite audiences to co‑create meaning. By translating my analysis into a website, I mirror the game’s invitation for players to click, explore, and confront their own interpretive choices.</p>
   </section>
 
-  <!-- ================ QUIZ ================= -->
+  <!-- ================= QUIZ ================= -->
   <section id="quiz-section">
     <h2>Test Your Free Will</h2>
     <p>Answer the following questions to see how well you grasp the postmodern tricks inside <em>The Stanley Parable</em>.</p>
@@ -176,7 +154,7 @@
     </div>
   </section>
 
-  <!-- ================ MEDIA GALLERY ================= -->
+  <!-- ================= MEDIA GALLERY ================= -->
   <section id="media">
     <h2>Gameplay & Media</h2>
     <p>These screenshots illustrate key moments. Replace alt text to describe each image.</p>
@@ -189,7 +167,7 @@
     </div>
   </section>
 
-  <!-- ================ WORKS CITED ================= -->
+  <!-- ================= WORKS CITED ================= -->
   <section id="works">
     <h2>Works Cited</h2>
     <ol>
@@ -204,11 +182,9 @@
     Built with ❤️ by Shi Xuyuan | Hosted on GitHub Pages
   </footer>
 
-  <!-- ========================
-       JavaScript
-  ========================= -->
+  <!-- ================= SCRIPT ================= -->
   <script>
-    /* ===== Simple Quiz Logic ===== */
+    // Simple quiz logic
     const submitBtn = document.getElementById('submit-quiz');
     const resultDiv = document.getElementById('quiz-result');
 
@@ -216,4 +192,12 @@
       let score = 0;
       const questions = document.querySelectorAll('#quiz .question');
       questions.forEach(q => {
-        const correct = q.dataset
+        const correct = q.dataset.answer;
+        const selected = q.querySelector('input:checked');
+        if (selected && selected.value === correct) score++;
+      });
+      resultDiv.textContent = `You scored ${score} / ${questions.length}. ${score === questions.length ? 'Excellent!' : 'Try again to reach full enlightenment.'}`;
+    });
+  </script>
+</body>
+</html>
