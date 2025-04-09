@@ -11,13 +11,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg-dark: #1e1e2f;
-      --bg-light: #2b2b40;
-      --text-light: #ffffff;
-      --accent: #ffb400;
-      --accent-light: #ffd773;
-      --max-width: 1100px;
+    :root{
+      --bg-dark:#1e1e2f;
+      --bg-light:#2b2b40;
+      --text-light:#ffffff;
+      --accent:#ffb400;
+      --accent-light:#ffd773;
+      --max-width:1100px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -32,13 +32,20 @@
     .nav-links{display:flex;gap:1.25rem;font-weight:600;letter-spacing:.4px}
 
     /* Hero */
-    .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 1rem;background:url('assets/images/hero.jpg') center/cover no-repeat fixed;color:var(--text-light)}
+    .hero{
+      position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;
+      text-align:center;padding:0 1rem;background:url('assets/images/hero.jpg') center/cover no-repeat fixed;
+      color:var(--text-light)
+    }
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.6)}
     .hero-content{position:relative;z-index:1;max-width:800px}
     .hero h1{font-size:clamp(2.2rem,6vw,3.5rem);font-weight:800;line-height:1.15}
     .hero h2{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:400;margin-top:.75rem}
     .meta{margin-top:1.25rem;font-size:.9rem;opacity:.8;letter-spacing:.5px}
-    .btn{background:var(--accent);color:var(--bg-dark);padding:.8rem 1.7rem;border-radius:8px;font-weight:700;transition:background .2s ease;display:inline-block;margin-top:2rem}
+    .btn{
+      background:var(--accent);color:var(--bg-dark);padding:.8rem 1.7rem;border-radius:8px;font-weight:700;
+      transition:background .2s ease;display:inline-block;margin-top:2rem
+    }
     .btn:hover{background:var(--accent-light)}
 
     /* Sections */
@@ -76,7 +83,7 @@
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- 1. Hero / Home -->
   <section id="home" class="hero">
     <div class="hero-content">
       <h1>The Illusion of Choice</h1>
@@ -86,7 +93,7 @@
     </div>
   </section>
 
-  <!-- Introduction -->
+  <!-- 2. Introduction -->
   <section id="intro">
     <h2>What Is <em>The Stanley Parable</em>?</h2>
     <p><em>The Stanley Parable</em> is a 2013 first‑person “walking simulator” developed by Galactic Café. Walking simulators are narrative‑driven games that focus on exploration and story rather than combat or complex mechanics. Players move through environments, uncovering plot details at their own pace.</p>
@@ -97,16 +104,17 @@
     <h3>Choice Structure</h3>
     <p>Despite dozens of possible endings, the game reveals that every path was pre‑written. Your apparent freedom is part of the design, challenging the player to question whether choice in games (and life) is real or illusory.</p>
 
+    <!-- Intro image (upload your own file or change filename) -->
     <img src="assets/images/map_choice.jpg" alt="Flowchart of narrative choices in The Stanley Parable" class="intro-img">
     <p class="caption">A fan‑made map visualising most decision paths in the game.</p>
   </section>
 
-  <!-- Analysis -->
+  <!-- 3. Analysis -->
   <section id="analysis">
     <h2>Critical Analysis</h2>
 
     <h3>1. Postmodern Lens</h3>
-    <p><strong>Breaking the Fourth Wall & Hyperreality:</strong> The Narrator addresses the player directly, making the game aware of its own fictionality. This self‑reference forces players to question the boundaries between the game world and their reality.</p>
+    <p><strong>Breaking the Fourth Wall & Hyperreality:</strong> The Narrator addresses the player directly, making the game aware of its own fictionality. This self‑reference forces players to question the boundaries between the game world and their reality.</p>
     <p><strong>Illusion of Free Will:</strong> No matter which hallway the player chooses, the game has already scripted the outcomes. The sense of agency is exposed as theatrical—echoing postmodern skepticism toward grand narratives of autonomy.</p>
 
     <h3>2. Societal Context</h3>
@@ -118,19 +126,20 @@
       <li>George Orwell’s <em>1984</em> – surveillance and manipulation of perceived reality.</li>
     </ul>
 
-    <h3>4. Themes & Tropes</h3>
+    <h3>4. Themes & Tropes</h3>
     <p>Unreliable narration, metafiction, existential dread, fragmentation of identity, parody of traditional game objectives.</p>
 
     <h3>5. Reflection</h3>
-    <p>This project taught me that postmodern texts invite audiences to co‑create meaning. By translating my analysis into a website, I mirror the game’s invitation for players to click, explore, and confront their own interpretive choices.</p>
+    <p>This project taught me that post‑modern texts invite audiences to co‑create meaning. By translating my analysis into a website, I mirror the game’s invitation for players to click, explore, and confront their own interpretive choices.</p>
   </section>
 
-  <!-- Quiz -->
+  <!-- 4. Quiz -->
   <section id="quiz-section">
     <h2>Test Your Free Will</h2>
-    <p>Answer the following questions to see how well you grasp the postmodern tricks inside <em>The Stanley Parable</em>.</p>
+    <p>Answer the following questions to see how well you grasp the post‑modern tricks inside <em>The Stanley Parable</em>.</p>
 
     <div id="quiz">
+      <!-- Question 1 -->
       <div class="question" data-answer="b">
         <h4>1. When the Narrator says, “Stanley went through the left door,” what happens if you choose the right door?</h4>
         <div class="answers">
@@ -140,8 +149,9 @@
         </div>
       </div>
 
+      <!-- Question 2 -->
       <div class="question" data-answer="c">
-        <h4>2. Which postmodern concept is MOST central to the game?</h4>
+        <h4>2. Which post‑modern concept is MOST central to the game?</h4>
         <div class="answers">
           <label><input type="radio" name="q2" value="a" /> Romantic idealism</label>
           <label><input type="radio" name="q2" value="b" /> Realist determinism</label>
@@ -149,9 +159,70 @@
         </div>
       </div>
 
+      <!-- Question 3 -->
       <div class="question" data-answer="a">
         <h4>3. The office setting primarily symbolizes…</h4>
         <div class="answers">
           <label><input type="radio" name="q3" value="a" /> Repetitive corporate monotony</label>
-          <label><input type="radio" name="q3" value
+          <label><input type="radio" name="q3" value="b" /> A utopian future of work</label>
+          <label><input type="radio" name="q3" value="c" /> Historical nostalgia for 1950s business culture</label>
+        </div>
+      </div>
+
+      <button id="submit-quiz" class="btn" style="margin-top:1rem;">Submit Answers</button>
+      <div id="quiz-result"></div>
+    </div>
+  </section>
+
+  <!-- 5. Media -->
+  <section id="media">
+    <h2>Gameplay & Media</h2>
+    <p>These screenshots illustrate key moments. Replace alt text to describe each image.</p>
+
+    <div class="gallery">
+      <img src="assets/images/1.jpg" alt="Gameplay screenshot 1" />
+      <img src="assets/images/2.jpg" alt="Gameplay screenshot 2" />
+      <img src="assets/images/3.jpg" alt="Gameplay screenshot 3" />
+      <img src="assets/images/4.jpg" alt="Gameplay screenshot 4" />
+    </div>
+  </section>
+
+  <!-- 6. Works Cited -->
+  <section id="works">
+    <h2>Works Cited</h2>
+    <ol>
+      <li>Galactic Café. <em>The Stanley Parable</em>. PC, 2013.</li>
+      <li>Weir, Peter, director. <em>The Truman Show</em>. Paramount Pictures, 1998.</li>
+      <li>Orwell, George. <em>Nineteen Eighty‑Four</em>. Secker & Warburg, 1949.</li>
+      <!-- Add any additional academic or media sources below -->
+    </ol>
+  </section>
+
+  <footer>
+    Built with ❤️ by Shi Xuyuan | Hosted on GitHub Pages
+  </footer>
+
+  <!-- Quiz JavaScript -->
+  <script>
+    // Simple quiz logic
+    const submitBtn = document.getElementById('submit-quiz');
+    const resultDiv  = document.getElementById('quiz-result');
+
+    submitBtn.addEventListener('click', () => {
+      let score = 0;
+      const questions = document.querySelectorAll('#quiz .question');
+      questions.forEach(q => {
+        const correct  = q.dataset.answer;
+        const selected = q.querySelector('input:checked');
+        if (selected && selected.value === correct) score++;
+      });
+      resultDiv.textContent =
+        `You scored ${score} / ${questions.length}. ` +
+        (score === questions.length
+          ? 'Excellent!'
+          : 'Try again to reach full enlightenment.');
+    });
+  </script>
+</body>
+</html>
 
