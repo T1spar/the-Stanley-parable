@@ -26,11 +26,7 @@
       --max-width: 1100px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -44,10 +40,7 @@
       margin-bottom: 0.5rem;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    a { color: var(--accent); text-decoration: none; }
     a:hover { color: var(--accent-light); }
 
     /* ===== NAVBAR ===== */
@@ -59,7 +52,6 @@
       z-index: 100;
       box-shadow: 0 2px 4px rgba(0,0,0,.4);
     }
-
     nav {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -68,36 +60,13 @@
       align-items: center;
       padding: 0 1rem;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 1.25rem;
-    }
-
-    .nav-links a {
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
+    .nav-links { display: flex; gap: 1.25rem; }
+    .nav-links a { font-weight: 600; letter-spacing: 0.5px; }
 
     /* ===== SECTIONS ===== */
-    section {
-      padding: 4rem 1rem;
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 1rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      color: var(--accent);
-    }
+    section { padding: 4rem 1rem; max-width: var(--max-width); margin: 0 auto; }
+    .hero { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
+    .hero h1 { font-size: 2.5rem; color: var(--accent); }
 
     .btn {
       background: var(--accent);
@@ -111,47 +80,17 @@
     .btn:hover { background: var(--accent-light); }
 
     /* ===== QUIZ ===== */
-    #quiz {
-      background: var(--bg-light);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,.4);
-    }
-    .question {
-      margin-bottom: 1rem;
-    }
-    .question h4 {
-      margin-bottom: 0.5rem;
-    }
-    .answers label {
-      display: block;
-      margin-bottom: 0.25rem;
-      cursor: pointer;
-    }
-    #quiz-result {
-      margin-top: 1.5rem;
-      font-weight: 600;
-      font-size: 1.2rem;
-      color: var(--accent);
-    }
+    #quiz { background: var(--bg-light); padding: 2rem; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,.4); }
+    .question { margin-bottom: 1rem; }
+    .question h4 { margin-bottom: 0.5rem; }
+    .answers label { display: block; margin-bottom: 0.25rem; cursor: pointer; }
+    #quiz-result { margin-top: 1.5rem; font-weight: 600; font-size: 1.2rem; color: var(--accent); }
 
     /* ===== MEDIA GALLERY ===== */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-    .gallery img, .gallery video {
-      width: 100%;
-      border-radius: 10px;
-    }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .gallery img { width: 100%; border-radius: 10px; }
 
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.875rem;
-      background: var(--bg-light);
-    }
+    footer { text-align: center; padding: 2rem 1rem; font-size: 0.875rem; background: var(--bg-light); }
   </style>
 </head>
 <body>
@@ -240,14 +179,13 @@
   <!-- ================ MEDIA GALLERY ================= -->
   <section id="media">
     <h2>Gameplay & Media</h2>
-    <p>Below are short clips and images demonstrating key moments. Replace the placeholders with your own files in <code>assets/images</code> or <code>assets/video</code>.</p>
+    <p>These screenshots illustrate key moments. Replace alt text to describe each image.</p>
 
     <div class="gallery">
-      <!-- ===== Replace src values with your own files ===== -->
-      <img src="assets/images/broom_closet.jpg" alt="Stanley in the broom closet" />
-      <video controls src="assets/video/choice_loop.mp4"></video>
-      <img src="assets/images/mind_control_facility.jpg" alt="Mind Control Facility" />
-      <video controls src="assets/video/narrator_reacts.mp4"></video>
+      <img src="assets/images/1.jpg" alt="Gameplay screenshot 1" />
+      <img src="assets/images/2.jpg" alt="Gameplay screenshot 2" />
+      <img src="assets/images/3.jpg" alt="Gameplay screenshot 3" />
+      <img src="assets/images/4.jpg" alt="Gameplay screenshot 4" />
     </div>
   </section>
 
@@ -278,12 +216,4 @@
       let score = 0;
       const questions = document.querySelectorAll('#quiz .question');
       questions.forEach(q => {
-        const correct = q.dataset.answer;
-        const selected = q.querySelector('input:checked');
-        if (selected && selected.value === correct) score++;
-      });
-      resultDiv.textContent = `You scored ${score} / ${questions.length}. ${score === questions.length ? 'Excellent!' : 'Try again to reach full enlightenment.'}`;
-    });
-  </script>
-</body>
-</html>
+        const correct = q.dataset
