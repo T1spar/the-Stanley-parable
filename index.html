@@ -308,55 +308,53 @@
     Built with ❤️ by Shi Xuyuan | Hosted on GitHub Pages
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    /* ---------- existing quiz logic ---------- */
-    const submitBtn = document.getElementById('submit-quiz');
-    const resultDiv = document.getElementById('quiz-result');
+<!-- JavaScript (replace everything inside your current <script> … </script>) -->
+<script>
+/* ===== QUIZ ===== */
+const submitBtn = document.getElementById('submit-quiz');
+const resultDiv = document.getElementById('quiz-result');
 
-    submitBtn.addEventListener('click', () => {
-      let score = 0;
-      const questions = document.querySelectorAll('#quiz .question');
-      questions.forEach(q => {
-        const correct  = q.dataset.answer;
-        const selected = q.querySelector('input:checked');
-        if (selected && selected.value === correct) score++;
-      });
-      resultDiv.textContent =
-        \`You scored \${score} / \${questions.length}. \` +
-        (score === questions.length ? 'Excellent!' : 'Try again to reach full enlightenment.');
-      showToast();  // trigger fake achievement
-    });
+submitBtn.addEventListener('click', () => {
+  let score = 0;
+  const questions = document.querySelectorAll('#quiz .question');
+  questions.forEach(q => {
+    const correct  = q.dataset.answer;
+    const selected = q.querySelector('input:checked');
+    if (selected && selected.value === correct) score++;
+  });
+  resultDiv.textContent =
+    `You scored ${score} / ${questions.length}. ` +
+    (score === questions.length ? 'Excellent!' : 'Try again to reach full enlightenment.');
+  showToast();               // fake achievement
+});
 
-    /* ---------- Narrator random pop‑ups ---------- */
-    const narratorLines = [
-      "Ah, still scrolling, are we?",
-      "Remember: every click was foretold.",
-      "You think you’re in control of this website?",
-      "Perhaps you’d like an achievement for reading?"
-    ];
-    function spawnNarrator(){
-      const box = document.createElement("div");
-      box.className = "narrator";
-      box.textContent = narratorLines[Math.floor(Math.random()*narratorLines.length)];
-      document.body.appendChild(box);
-      setTimeout(()=>box.remove(), 6000);
-      setTimeout(spawnNarrator, Math.random()*45000 + 45000); // 45–90 s
-    }
-    setTimeout(spawnNarrator, 20000); // first pop‑up after 20 s
+/* ===== NARRATOR POP‑UPS ===== */
+const narratorLines = [
+  'Ah, still scrolling, are we?',
+  'Remember: every click was foretold.',
+  'You think you’re in control of this website?',
+  'Perhaps you’d like an achievement for reading?'
+];
+function spawnNarrator() {
+  const box = document.createElement('div');
+  box.className = 'narrator';
+  box.textContent = narratorLines[Math.floor(Math.random() * narratorLines.length)];
+  document.body.appendChild(box);
+  setTimeout(() => box.remove(), 6000);                    // vanish after 6 s
+  setTimeout(spawnNarrator, Math.random() * 45000 + 45000); // 45‑90 s loop
+}
+setTimeout(spawnNarrator, 20000); // first pop‑up after 20 s
 
-    /* ---------- Artist‑statement modal ---------- */
-    const modal  = document.getElementById("statement-modal");
-    document.getElementById("open-statement").onclick = ()=> modal.classList.remove("hidden");
-    document.getElementById("close-statement").onclick = ()=> modal.classList.add("hidden");
-    modal.onclick = e => { if(e.target === modal) modal.classList.add("hidden"); };
+/* ===== ARTIST‑STATEMENT MODAL ===== */
+const modal = document.getElementById('statement-modal');
+document.getElementById('open-statement').onclick  = () => modal.classList.remove('hidden');
+document.getElementById('close-statement').onclick = () => modal.classList.add('hidden');
+modal.onclick = e => { if (e.target === modal) modal.classList.add('hidden'); };
 
-    /* ---------- Fake achievement toast ---------- */
-    const toast = document.getElementById("toast");
-    function showToast(){
-      toast.classList.remove("hidden");
-      setTimeout(()=>toast.classList.add("hidden"), 4000);
-    }
-  </script>
-</body>
-</html>
+/* ===== FAKE ACHIEVEMENT TOAST ===== */
+const toast = document.getElementById('toast');
+function showToast() {
+  toast.classList.remove('hidden');
+  setTimeout(() => toast.classList.add('hidden'), 4000);
+}
+</script>
