@@ -66,32 +66,35 @@
     .gallery img,.gallery video{width:100%;border-radius:10px}
 
     /* ---------- nicer spacing / hierarchy for the Analysis section ---------- */
-    #analysis h2{
-      font-size:1.9rem;
-      color:var(--accent-light);
-      margin-bottom:1.2rem;
-    }
-    #analysis h3{
-      font-size:1.25rem;
-      color:var(--accent);
-      margin-top:1.75rem;
-      margin-bottom:.6rem;
-    }
+    #analysis h2{font-size:1.9rem;color:var(--accent-light);margin-bottom:1.2rem}
+    #analysis h3{font-size:1.25rem;color:var(--accent);margin-top:1.75rem;margin-bottom:.6rem}
     #analysis ul{margin-left:1.2rem;margin-bottom:.8rem}
     #analysis li{margin-bottom:.35rem}
 
     /* thumbnails + captions for theme screenshots */
-    .theme-img{
-      width:100%;
-      max-width:520px;
-      border-radius:8px;
-      margin:.5rem 0 .4rem;
-    }
-    .img-caption{
-      font-size:.9rem;
-      opacity:.8;
-      margin-bottom:1.2rem;
-    }
+    .theme-img{width:100%;max-width:520px;border-radius:8px;margin:.5rem 0 .4rem}
+    .img-caption{font-size:.9rem;opacity:.8;margin-bottom:1.2rem}
+
+    /* ---------- modal ---------- */
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;
+           align-items:center;justify-content:center;z-index:200}
+    .modal.hidden{display:none}
+    .modal-content{background:var(--bg-light);padding:2rem;border-radius:12px;
+                   max-width:600px;width:90%;box-shadow:0 4px 12px rgba(0,0,0,.6)}
+    .close{cursor:pointer;font-size:1.5rem;float:right;margin-top:-.5rem}
+
+    /* ---------- narrator pop‑up ---------- */
+    .narrator{position:fixed;bottom:1.5rem;left:1.5rem;max-width:260px;
+              background:var(--bg-light);padding:1rem 1.2rem;border-radius:10px;
+              box-shadow:0 3px 10px rgba(0,0,0,.4);animation:fadein .4s}
+    @keyframes fadein{from{opacity:0;transform:translateY(20px)}to{opacity:1}}
+
+    /* ---------- toast ---------- */
+    .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--accent);
+           color:var(--bg-dark);padding:.8rem 1.2rem;border-radius:10px;
+           font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,.4);animation:pop .3s}
+    .toast.hidden{display:none}
+    @keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
 
     footer{text-align:center;padding:2rem 1rem;font-size:.875rem;background:var(--bg-light)}
   </style>
@@ -103,6 +106,7 @@
       <a href="#home"><strong>The Stanley Parable</strong></a>
       <div class="nav-links">
         <a href="#intro">Intro</a>
+        <a href="#extras">New Stuffs</a>
         <a href="#analysis">Analysis</a>
         <a href="#quiz-section">Quiz</a>
         <a href="#media">Media</a>
@@ -136,7 +140,40 @@
     <p class="caption">A fan‑made map visualising most decision paths in the game.</p>
   </section>
 
-  <!-- 3. Analysis -->
+  <!-- 3. New Stuffs -->
+  <section id="extras">
+    <h2>New Stuffs: Post‑modern Flourishes</h2>
+    <p>
+      This page now misbehaves—just like <em>The Stanley Parable</em>.
+      Watch for surprise Narrator comments, unlock a totally meaningless
+      achievement, and read why I built the site this way.
+    </p>
+    <button id="open-statement" class="btn">Artist Statement</button>
+  </section>
+
+  <!-- Artist‑statement modal -->
+  <div id="statement-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-statement" class="close">&times;</span>
+      <h3>Artist Statement</h3>
+      <p>
+        I chose an interactive website because it mirrors the game’s invitation
+        to click, wander, and question agency. By sprinkling meta‑jokes (fake
+        achievements, pop‑up Narrator), I collapse the distance between player
+        and critic, letting the analysis <em>perform</em> its argument instead
+        of merely describing it.
+      </p>
+      <p>
+        Risks include confusing readers—yet confusion is the point: it exposes
+        how easily we follow rules even when they’re arbitrary.
+      </p>
+    </div>
+  </div>
+
+  <!-- Toast for fake achievement -->
+  <div id="toast" class="toast hidden">ACHIEVEMENT UNLOCKED: Reader Supreme</div>
+
+  <!-- 4. Analysis -->
   <section id="analysis">
     <h2>Critical Analysis</h2>
 
@@ -147,49 +184,30 @@
     <ul>
       <li>
         <strong>Illusion of Free Will —</strong>
-        The opening binary (“Stanley went through the left door”) dares players to rebel, yet every branch ends in a pre‑written conclusion, revealing a system that only <em>pretends</em> to empower.<br>
+        Facing the right door while the subtitle still orders “Stanley went through the left door” freezes the contradiction in a single frame, showing that even rebellion is pre‑written.<br>
         <img src="assets/images/Two_Doors_Room.jpg" class="theme-img"
              alt="Two identical doors with subtitle 'Stanley went through the left door'">
-        <p class="img-caption">
-          <em>Screenshot:</em> Facing the <strong>right</strong> door while the subtitle still
-          orders “left” freezes the contradiction in a single frame.
-        </p>
       </li>
 
       <li>
         <strong>Corporate Alienation —</strong>
-        Endless beige cubicles and a job that is literally “press buttons when told” visualise
-        late‑capitalist anxieties about routinised labour and loss of identity.<br>
+        A wide, empty shot of identical cubicles bathed in fluorescent gloom visualises the soulless, interchangeable grind Stanley embodies.<br>
         <img src="assets/images/Fake_Turn_1.jpg" class="theme-img"
              alt="Sea of empty cubicles under fluorescent lights">
-        <p class="img-caption">
-          <em>Screenshot:</em> A wide, empty office grid screams “soulless grind,” reducing
-          Stanley to one interchangeable desk.
-        </p>
       </li>
 
       <li>
-        <strong>Author vs Reader/Player —</strong>
-        The Narrator’s fury when we deviate (“You’re not Stanley; you’re a TEA‑DRINKING,
-        VACATION‑TAKING MACHINE!”) parodies the death‑of‑the‑author debate: who owns a text once it is playable?<br>
+        <strong>Author vs Reader / Player —</strong>
+        The absurd Adventure Line™ literally draws the Narrator’s control onto the floor; the player’s obedience (or disobedience) becomes visible, echoing the debate over who “owns” a story once it’s in the reader’s hands.<br>
         <img src="assets/images/AdventureLineImage.jpg" class="theme-img"
              alt="The Adventure Line™ snaking across the floor">
-        <p class="img-caption">
-          <em>Screenshot:</em> The absurd <strong>Adventure Line™</strong> literally draws the
-          Narrator’s control onto the floor, visualising the tug‑of‑war over authorship.
-        </p>
       </li>
 
       <li>
-        <strong>Meta‑Comedy as Critique —</strong>
-        Gags like the fake “Unachievable” achievement and the demo’s “Wall Technology” turn
-        industry tropes into punch‑lines, forcing us to laugh at—and then question—them.<br>
+        <strong>Meta‑Comedy / Achievement Satire —</strong>
+        The Jump Circle and its pop‑up “You can’t jump” parody arbitrary game objectives and hollow achievement culture, making us laugh first—and question later.<br>
         <img src="assets/images/Jump_Circle_New_Content.jpg" class="theme-img"
              alt="Jump Circle and 'You can’t jump' message">
-        <p class="img-caption">
-          <em>Screenshot:</em> The pointless <strong>Jump Circle</strong> and its “You can’t
-          jump” toast mock arbitrary objectives and hollow achievement culture.
-        </p>
       </li>
     </ul>
 
@@ -290,11 +308,11 @@
     Built with ❤️ by Shi Xuyuan | Hosted on GitHub Pages
   </footer>
 
-  <!-- Quiz JavaScript -->
+  <!-- JavaScript -->
   <script>
-    // Simple quiz logic
+    /* ---------- existing quiz logic ---------- */
     const submitBtn = document.getElementById('submit-quiz');
-    const resultDiv  = document.getElementById('quiz-result');
+    const resultDiv = document.getElementById('quiz-result');
 
     submitBtn.addEventListener('click', () => {
       let score = 0;
@@ -305,11 +323,40 @@
         if (selected && selected.value === correct) score++;
       });
       resultDiv.textContent =
-        `You scored ${score} / ${questions.length}. ` +
-        (score === questions.length
-          ? 'Excellent!'
-          : 'Try again to reach full enlightenment.');
+        \`You scored \${score} / \${questions.length}. \` +
+        (score === questions.length ? 'Excellent!' : 'Try again to reach full enlightenment.');
+      showToast();  // trigger fake achievement
     });
+
+    /* ---------- Narrator random pop‑ups ---------- */
+    const narratorLines = [
+      "Ah, still scrolling, are we?",
+      "Remember: every click was foretold.",
+      "You think you’re in control of this website?",
+      "Perhaps you’d like an achievement for reading?"
+    ];
+    function spawnNarrator(){
+      const box = document.createElement("div");
+      box.className = "narrator";
+      box.textContent = narratorLines[Math.floor(Math.random()*narratorLines.length)];
+      document.body.appendChild(box);
+      setTimeout(()=>box.remove(), 6000);
+      setTimeout(spawnNarrator, Math.random()*45000 + 45000); // 45–90 s
+    }
+    setTimeout(spawnNarrator, 20000); // first pop‑up after 20 s
+
+    /* ---------- Artist‑statement modal ---------- */
+    const modal  = document.getElementById("statement-modal");
+    document.getElementById("open-statement").onclick = ()=> modal.classList.remove("hidden");
+    document.getElementById("close-statement").onclick = ()=> modal.classList.add("hidden");
+    modal.onclick = e => { if(e.target === modal) modal.classList.add("hidden"); };
+
+    /* ---------- Fake achievement toast ---------- */
+    const toast = document.getElementById("toast");
+    function showToast(){
+      toast.classList.remove("hidden");
+      setTimeout(()=>toast.classList.add("hidden"), 4000);
+    }
   </script>
 </body>
 </html>
