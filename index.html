@@ -335,15 +335,19 @@ const narratorLines = [
   'You think you’re in control of this website?',
   'Perhaps you’d like an achievement for reading?'
 ];
+
 function spawnNarrator() {
   const box = document.createElement('div');
   box.className = 'narrator';
   box.textContent = narratorLines[Math.floor(Math.random() * narratorLines.length)];
   document.body.appendChild(box);
   setTimeout(() => box.remove(), 6000);                    // vanish after 6 s
-  setTimeout(spawnNarrator, Math.random() * 45000 + 45000); // 45‑90 s loop
+  setTimeout(spawnNarrator, Math.random() * 45000 + 45000); // next bubble 45‑90 s later
 }
-setTimeout(spawnNarrator, 20000); // first pop‑up after 20 s
+
+/* first pop‑up now appears after 5 seconds */
+setTimeout(spawnNarrator, 5000);
+
 
 /* ===== ARTIST‑STATEMENT MODAL ===== */
 const modal = document.getElementById('statement-modal');
