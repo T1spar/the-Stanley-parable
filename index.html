@@ -10,27 +10,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg-dark:#1e1e2f;
-      --bg-light:#2b2b40;
-      --text-light:#ffffff;
-      --accent:#ffb400;
-      --accent-light:#ffd773;
-      --max-width:1100px;
-    }
+<style>
+  :root{
+    --bg-dark:#1e1e2f;
+    --bg-light:#2b2b40;
+    --text-light:#ffffff;
+    --accent:#ffb400;
+    --accent-light:#ffd773;
+    --max-width:1100px;
+  }
 
-    /* native smooth scroll */
-    html{scroll-behavior:smooth;}
+  /* NEW — makes every #anchor link scroll smoothly instead of jumping */
+  html{scroll-behavior:smooth;}
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Inter',sans-serif;background:var(--bg-dark);color:var(--text-light);line-height:1.6}
-    h1,h2,h3,h4{font-family:'Montserrat',sans-serif;margin-bottom:.5rem}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{color:var(--accent-light)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:var(--bg-dark);color:var(--text-light);line-height:1.6}
+  h1,h2,h3,h4{font-family:'Montserrat',sans-serif;margin-bottom:.5rem}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{color:var(--accent-light)}
 
-    /* Navbar */
-    header{position:sticky;top:0;z-index:100;background:rgba(30,30,47,.85);backdrop-filter:blur(6px)}
+  /* … keep the rest of your CSS exactly as it is … */
+
+
+    /* Navbar  */
+    header{position:sticky;top:0;z-index:100;background:rgba(30,30,47,.85);backdrop-filter:blur(6px)}  
     nav{max-width:var(--max-width);margin:0 auto;padding:1rem;display:flex;justify-content:space-between;align-items:center}
     .nav-links{display:flex;gap:1.25rem;font-weight:600;letter-spacing:.4px}
 
@@ -66,18 +69,19 @@
 
     /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
-    .gallery img{width:100%;border-radius:10px}
+    .gallery img,.gallery video{width:100%;border-radius:10px}
 
-    /* Analysis hierarchy */
+    /* ---------- nicer spacing / hierarchy for the Analysis section ---------- */
     #analysis h2{font-size:1.9rem;color:var(--accent-light);margin-bottom:1.2rem}
     #analysis h3{font-size:1.25rem;color:var(--accent);margin-top:1.75rem;margin-bottom:.6rem}
     #analysis ul{margin-left:1.2rem;margin-bottom:.8rem}
     #analysis li{margin-bottom:.35rem}
 
-    /* theme screenshots */
+    /* thumbnails + captions for theme screenshots */
     .theme-img{width:100%;max-width:520px;border-radius:8px;margin:.5rem 0 .4rem}
+    .img-caption{font-size:.9rem;opacity:.8;margin-bottom:1.2rem}
 
-    /* modal */
+    /* ---------- modal ---------- */
     .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;
            align-items:center;justify-content:center;z-index:200}
     .modal.hidden{display:none}
@@ -85,13 +89,13 @@
                    max-width:600px;width:90%;box-shadow:0 4px 12px rgba(0,0,0,.6)}
     .close{cursor:pointer;font-size:1.5rem;float:right;margin-top:-.5rem}
 
-    /* narrator pop‑up */
+    /* ---------- narrator pop‑up ---------- */
     .narrator{position:fixed;bottom:1.5rem;left:1.5rem;max-width:260px;
               background:var(--bg-light);padding:1rem 1.2rem;border-radius:10px;
               box-shadow:0 3px 10px rgba(0,0,0,.4);animation:fadein .4s}
     @keyframes fadein{from{opacity:0;transform:translateY(20px)}to{opacity:1}}
 
-    /* toast */
+    /* ---------- toast ---------- */
     .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--accent);
            color:var(--bg-dark);padding:.8rem 1.2rem;border-radius:10px;
            font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,.4);animation:pop .3s}
@@ -105,14 +109,14 @@
   <!-- Navbar -->
   <header>
     <nav>
-      <a href="#home" class="smooth"><strong>The Stanley Parable</strong></a>
+      <a href="#home"><strong>The Stanley Parable</strong></a>
       <div class="nav-links">
-        <a href="#intro" class="smooth">Intro</a>
-        <a href="#extras" class="smooth">New Stuffs</a>
-        <a href="#analysis" class="smooth">Analysis</a>
-        <a href="#quiz-section" class="smooth">Quiz</a>
-        <a href="#media" class="smooth">Media</a>
-        <a href="#works" class="smooth">Works Cited</a>
+        <a href="#intro">Intro</a>
+        <a href="#extras">New Stuffs</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#quiz-section">Quiz</a>
+        <a href="#media">Media</a>
+        <a href="#works">Works Cited</a>
       </div>
     </nav>
   </header>
@@ -123,36 +127,44 @@
       <h1>The Illusion of Choice</h1>
       <h2>A Postmodern Journey through <em>The Stanley Parable</em></h2>
       <p class="meta">Interactive Analysis by Shi Xuyuan  |  Apr 2025</p>
-      <a href="#intro" class="btn smooth">Begin</a>
+      <a href="#intro" class="btn">Begin</a>
     </div>
   </section>
 
-  <!-- 2. Introduction -->
-  <section id="intro">
-    <h2>What Is <em>The Stanley Parable</em>?</h2>
-    <p><em>The Stanley Parable</em> is a 2013 first‑person “walking simulator” developed by Galactic Café. Walking simulators are narrative‑driven games that focus on exploration and story rather than combat or complex mechanics.</p>
+ <!-- 2. Introduction -->
+<section id="intro">
+  <h2>What Is <em>The Stanley Parable</em>?</h2>
+  <p><em>The Stanley Parable</em> is a 2013 first‑person “walking simulator” developed by Galactic Café. Walking simulators are narrative‑driven games that focus on exploration and story rather than combat or complex mechanics. Players move through environments, uncovering plot details at their own pace.</p>
 
-    <h3>Basic Premise</h3>
-    <p>You play as Stanley, Employee 427, who realises one day that all his co‑workers have vanished. A disembodied Narrator describes everything Stanley is “supposed” to do—but you can obey, disobey, or wander off entirely.</p>
+  <h3>Basic Premise</h3>
+  <p>You play as Stanley, Employee 427, who realises one day that all his co‑workers have vanished. A disembodied Narrator describes everything Stanley is “supposed” to do—but you can obey, disobey, or wander off entirely. Every decision branches the story into different endings that comment on free will, conformity, and the nature of storytelling itself.</p>
 
-    <h3>Choice Structure</h3>
-    <p>Despite dozens of possible endings, the game reveals that every path was pre‑written. Your apparent freedom is part of the design, challenging the player to question whether choice in games (and life) is real or illusory.</p>
+  <h3>Choice Structure</h3>
+  <p>Despite dozens of possible endings, the game reveals that every path was pre‑written. Your apparent freedom is part of the design, challenging the player to question whether choice in games (and life) is real or illusory.</p>
 
-    <img src="assets/images/map_choice.jpg" alt="Flowchart of narrative choices in The Stanley Parable" class="intro-img">
-    <p class="caption">A fan‑made map visualising most decision paths in the game.</p>
+  <!-- fan‑made route map -->
+  <img src="assets/images/map_choice.jpg" alt="Flowchart of narrative choices in The Stanley Parable" class="intro-img">
+  <p class="caption">A fan‑made map visualising most decision paths in the game.</p>
 
-    <p>
-      Prefer watching to reading? Check out
-      <a href="https://www.youtube.com/watch?v=lEvYESMkF0I&t=0s" target="_blank" rel="noopener">
-        <strong>this 25‑minute “All Endings & Secrets” video</strong></a>,
-      which walks the same routes shown in the map.
-    </p>
-  </section>
+  <!-- NEW paragraph with video link -->
+  <p>
+    If you’d rather <em>see</em> every branch play out instead of tracing the chart,
+    watch this 25‑minute compilation —
+    <a href="https://www.youtube.com/watch?v=lEvYESMkF0I&t=0s"
+       target="_blank" rel="noopener">
+       <strong>The Stanley Parable Ultra Deluxe – All Endings & Secrets</strong></a>.
+    The video walks through the exact routes shown in the map above, so you can compare the flow‑chart to the in‑game reality.
+  </p>
+</section>
 
   <!-- 3. New Stuffs -->
   <section id="extras">
     <h2>New Stuffs: Post‑modern Flourishes</h2>
-    <p>This page now misbehaves—just like the game. Watch for Narrator pop‑ups, unlock a meaningless achievement, and read why I built the site this way.</p>
+    <p>
+      This page now misbehaves—just like <em>The Stanley Parable</em>.
+      Watch for surprise Narrator comments, unlock a totally meaningless
+      achievement, and read why I built the site this way.
+    </p>
     <button id="open-statement" class="btn">Artist Statement</button>
   </section>
 
@@ -161,21 +173,90 @@
     <div class="modal-content">
       <span id="close-statement" class="close">&times;</span>
       <h3>Artist Statement</h3>
-      <p>I chose an interactive website because it mirrors the game’s invitation to click, wander, and question agency. By sprinkling meta‑jokes (fake achievements, pop‑up Narrator), I collapse the distance between player and critic, letting the analysis <em>perform</em> its argument.</p>
-      <p>Confusion is intentional: it exposes how easily we follow rules even when they’re arbitrary.</p>
+      <p>
+        I chose an interactive website because it mirrors the game’s invitation
+        to click, wander, and question agency. By sprinkling meta‑jokes (fake
+        achievements, pop‑up Narrator), I collapse the distance between player
+        and critic, letting the analysis <em>perform</em> its argument instead
+        of merely describing it.
+      </p>
+      <p>
+        Risks include confusing readers—yet confusion is the point: it exposes
+        how easily we follow rules even when they’re arbitrary.
+      </p>
     </div>
   </div>
 
-  <!-- Toast -->
+  <!-- Toast for fake achievement -->
   <div id="toast" class="toast hidden">ACHIEVEMENT UNLOCKED: Reader Supreme</div>
 
   <!-- 4. Analysis -->
   <section id="analysis">
     <h2>Critical Analysis</h2>
-    <!-- … existing analysis content … -->
+
+    <h3>1  Critical Lens (Postmodern Metafiction + Ludology)</h3>
+    <p><em>The Stanley Parable</em> is best understood through a <strong>postmodern metafictional</strong> lens that foregrounds self‑reference, intertextuality, and the collapse of authorial authority. A complementary <strong>ludology‑first</strong> view (studying games as rule‑systems) shows how its design itself produces meaning. Together, these lenses expose the game’s central irony: whichever hallway we choose, the algorithm already knows every outcome. The tension between <em>felt</em> agency and <em>coded</em> inevitability is the sharp edge of its post‑modern critique.</p>
+
+    <h3>2  Key Themes</h3>
+    <ul>
+      <li>
+        <strong>Illusion of Free Will —</strong>
+        Facing the right door while the subtitle still orders “Stanley went through the left door” freezes the contradiction in a single frame, showing that even rebellion is pre‑written.<br>
+        <img src="assets/images/Two_Doors_Room.jpg" class="theme-img"
+             alt="Two identical doors with subtitle 'Stanley went through the left door'">
+      </li>
+
+      <li>
+        <strong>Corporate Alienation —</strong>
+        A wide, empty shot of identical cubicles bathed in fluorescent gloom visualises the soulless, interchangeable grind Stanley embodies.<br>
+        <img src="assets/images/Fake_Turn_1.jpg" class="theme-img"
+             alt="Sea of empty cubicles under fluorescent lights">
+      </li>
+
+      <li>
+        <strong>Author vs Reader / Player —</strong>
+        The absurd Adventure Line™ literally draws the Narrator’s control onto the floor; the player’s obedience (or disobedience) becomes visible, echoing the debate over who “owns” a story once it’s in the reader’s hands.<br>
+        <img src="assets/images/AdventureLineImage.jpg" class="theme-img"
+             alt="The Adventure Line™ snaking across the floor">
+      </li>
+
+      <li>
+        <strong>Meta‑Comedy / Achievement Satire —</strong>
+        The Jump Circle and its pop‑up “You can’t jump” parody arbitrary game objectives and hollow achievement culture, making us laugh first—and question later.<br>
+        <img src="assets/images/Jump_Circle_New_Content.jpg" class="theme-img"
+             alt="Jump Circle and 'You can’t jump' message">
+      </li>
+    </ul>
+
+    <h3>3  Societal & Historical Context</h3>
+    <ul>
+      <li><strong>Indie‑Game Boom (late 2000s–early 2010s).</strong> Cheap digital distribution let small studios satirise AAA formulas; <em>TSP</em> (2013) rides that wave as an antidote to blockbuster sameness.</li>
+      <li><strong>Gamification & Metrics Culture.</strong> By 2013, achievement systems were ubiquitous—from consoles to workplace apps. The game’s empty achievements lampoon a culture obsessed with quantified progress.</li>
+      <li><strong>Post‑Recession Work Dread.</strong> Stanley’s meaningless labour reflects a generation confronting precarious employment after the 2008 crash—echoing <em>Fight Club</em>‑era critiques of “jobs we hate.”</li>
+    </ul>
+
+    <h3>4  Figurative / Narrative Devices</h3>
+    <ul>
+      <li><strong>Metalepsis —</strong> The Narrator steps into the player’s space (“Stanley, close this game and go outside”), blurring fiction and reality.</li>
+      <li><strong>Symbolic Architecture —</strong> The identical doors and the “Mind‑Control Facility” button physicalise moral dilemmas and power structures.</li>
+      <li><strong>Parodic Intertext —</strong> The “Broom Closet” monologue mimics audio‑log clichés, skewering environmental‑storytelling tropes.</li>
+      <li><strong>Recursive Structure —</strong> The “Confusion Ending” restarts the narrative six times, embodying post‑modern non‑linearity—the form is the argument.</li>
+    </ul>
+
+    <h3>5  Intertextual & Cross‑Media Connections</h3>
+    <ul>
+      <li><strong>Film:</strong> <em>The Truman Show</em> (1998) – both protagonists inhabit pre‑scripted worlds overseen by unseen author‑figures.</li>
+      <li><strong>Game:</strong> <em>BioShock</em> (2007) – the “Would you kindly…” twist prefigures <em>TSP</em>’s exposure of on‑rails obedience.</li>
+      <li><strong>Game:</strong> <em>Antichamber</em> (2013) – uses spatial paradox to upend player expectations, as <em>TSP</em> does with narrative paradox.</li>
+      <li><strong>Literature:</strong> Calvino’s <em>If on a winter’s night a traveler</em> (1979) – directly addresses and thwarts the reader, mirroring the Narrator–player dynamic.</li>
+    </ul>
+    <p>These parallels place <em>TSP</em> in a wider cultural conversation about authorship, control, and simulated realities.</p>
+
+    <h3>6  Original Insight & Creative Angle</h3>
+    <p>Beyond a satire of game design, <em>The Stanley Parable</em> doubles as a labour parable for the algorithmic age: Stanley’s keypad resembles today’s data‑entry micro‑tasks, and the Narrator anticipates AI management systems that nudge workers with “optimal” prompts. The game thus foreshadows a future where both labour and leisure are invisibly scripted by code, making its post‑modern warning newly urgent.</p>
   </section>
 
-  <!-- 5. Quiz -->
+  <!-- 4. Quiz -->
   <section id="quiz-section">
     <h2>Test Your Free Will</h2>
     <p>Answer the following questions to see how well you grasp the post‑modern tricks inside <em>The Stanley Parable</em>.</p>
@@ -216,9 +297,11 @@
     </div>
   </section>
 
-  <!-- 6. Media -->
+  <!-- 5. Media -->
   <section id="media">
     <h2>Gameplay & Media</h2>
+    <p>These screenshots illustrate key moments. Replace alt text to describe each image.</p>
+
     <div class="gallery">
       <img src="assets/images/1.jpg" alt="Gameplay screenshot 1" />
       <img src="assets/images/2.jpg" alt="Gameplay screenshot 2" />
@@ -227,13 +310,14 @@
     </div>
   </section>
 
-  <!-- 7. Works Cited -->
+  <!-- 6. Works Cited -->
   <section id="works">
     <h2>Works Cited</h2>
     <ol>
       <li>Galactic Café. <em>The Stanley Parable</em>. PC, 2013.</li>
       <li>Weir, Peter, director. <em>The Truman Show</em>. Paramount Pictures, 1998.</li>
       <li>Orwell, George. <em>Nineteen Eighty‑Four</em>. Secker & Warburg, 1949.</li>
+      <!-- Add any additional academic or media sources below -->
     </ol>
   </section>
 
@@ -241,68 +325,57 @@
     Built with ❤️ by Shi Xuyuan | Hosted on GitHub Pages
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-  /* ===== Smooth‑scroll helper for browsers that ignore CSS (Safari <16) ===== */
-  document.querySelectorAll('a.smooth').forEach(link=>{
-    link.addEventListener('click',e=>{
-      const href = link.getAttribute('href');
-      if(href && href.startsWith('#')){
-        e.preventDefault();
-        document.querySelector(href).scrollIntoView({behavior:'smooth'});
-        history.pushState(null,null,href);      // keep URL hash in address bar
-      }
-    });
+<!-- JavaScript (replace everything inside your current <script> … </script>) -->
+<script>
+/* ===== QUIZ ===== */
+const submitBtn = document.getElementById('submit-quiz');
+const resultDiv = document.getElementById('quiz-result');
+
+submitBtn.addEventListener('click', () => {
+  let score = 0;
+  const questions = document.querySelectorAll('#quiz .question');
+  questions.forEach(q => {
+    const correct  = q.dataset.answer;
+    const selected = q.querySelector('input:checked');
+    if (selected && selected.value === correct) score++;
   });
+  resultDiv.textContent =
+    You scored ${score} / ${questions.length}.  +
+    (score === questions.length ? 'Excellent!' : 'Try again to reach full enlightenment.');
+  showToast();               // fake achievement
+});
 
-  /* ===== QUIZ ===== */
-  const submitBtn = document.getElementById('submit-quiz');
-  const resultDiv = document.getElementById('quiz-result');
+/* ===== NARRATOR POP‑UPS ===== */
+const narratorLines = [
+  'Ah, still scrolling, are we?',
+  'Remember: every click was foretold.',
+  'You think you’re in control of this website?',
+  'Perhaps you’d like an achievement for reading?'
+];
 
-  submitBtn.addEventListener('click', () => {
-    let score = 0;
-    const questions = document.querySelectorAll('#quiz .question');
-    questions.forEach(q => {
-      const correct  = q.dataset.answer;
-      const selected = q.querySelector('input:checked');
-      if (selected && selected.value === correct) score++;
-    });
-    resultDiv.textContent =
-      `You scored ${score} / ${questions.length}. ` +
-      (score === questions.length ? 'Excellent!' : 'Try again to reach full enlightenment.');
-    showToast();               // fake achievement
-  });
+function spawnNarrator() {
+  const box = document.createElement('div');
+  box.className = 'narrator';
+  box.textContent = narratorLines[Math.floor(Math.random() * narratorLines.length)];
+  document.body.appendChild(box);
+  setTimeout(() => box.remove(), 6000);                    // vanish after 6 s
+  setTimeout(spawnNarrator, Math.random() * 45000 + 45000); // next bubble 45‑90 s later
+}
 
-  /* ===== NARRATOR POP‑UPS ===== */
-  const narratorLines = [
-    'Ah, still scrolling, are we?',
-    'Remember: every click was foretold.',
-    'You think you’re in control of this website?',
-    'Perhaps you’d like an achievement for reading?'
-  ];
+/* first pop‑up now appears after 5 seconds */
+setTimeout(spawnNarrator, 5000);
 
-  function spawnNarrator() {
-    const box = document.createElement('div');
-    box.className = 'narrator';
-    box.textContent = narratorLines[Math.floor(Math.random() * narratorLines.length)];
-    document.body.appendChild(box);
-    setTimeout(() => box.remove(), 6000);                    // vanish after 6 s
-    setTimeout(spawnNarrator, Math.random() * 45000 + 45000); // next bubble 45‑90 s later
-  }
-  setTimeout(spawnNarrator, 5000); // first bubble after 5 s
 
-  /* ===== ARTIST‑STATEMENT MODAL ===== */
-  const modal = document.getElementById('statement-modal');
-  document.getElementById('open-statement').onclick  = () => modal.classList.remove('hidden');
-  document.getElementById('close-statement').onclick = () => modal.classList.add('hidden');
-  modal.onclick = e => { if (e.target === modal) modal.classList.add('hidden'); };
+/* ===== ARTIST‑STATEMENT MODAL ===== */
+const modal = document.getElementById('statement-modal');
+document.getElementById('open-statement').onclick  = () => modal.classList.remove('hidden');
+document.getElementById('close-statement').onclick = () => modal.classList.add('hidden');
+modal.onclick = e => { if (e.target === modal) modal.classList.add('hidden'); };
 
-  /* ===== FAKE ACHIEVEMENT TOAST ===== */
-  const toast = document.getElementById('toast');
-  function showToast() {
-    toast.classList.remove('hidden');
-    setTimeout(() => toast.classList.add('hidden'), 4000);
-  }
-  </script>
-</body>
-</html>
+/* ===== FAKE ACHIEVEMENT TOAST ===== */
+const toast = document.getElementById('toast');
+function showToast() {
+  toast.classList.remove('hidden');
+  setTimeout(() => toast.classList.add('hidden'), 4000);
+}
+</script>
