@@ -10,30 +10,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-<style>
-  :root{
-    --bg-dark:#1e1e2f;
-    --bg-light:#2b2b40;
-    --text-light:#ffffff;
-    --accent:#ffb400;
-    --accent-light:#ffd773;
-    --max-width:1100px;
-  }
+  <style>
+    :root{
+      --bg-dark:#1e1e2f;
+      --bg-light:#2b2b40;
+      --text-light:#ffffff;
+      --accent:#ffb400;
+      --accent-light:#ffd773;
+      --max-width:1100px;
+    }
 
-  /* NEW — makes every #anchor link scroll smoothly instead of jumping */
-  html{scroll-behavior:smooth;}
+    /* smooth scroll */
+    html{scroll-behavior:smooth;}
 
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Inter',sans-serif;background:var(--bg-dark);color:var(--text-light);line-height:1.6}
-  h1,h2,h3,h4{font-family:'Montserrat',sans-serif;margin-bottom:.5rem}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{color:var(--accent-light)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:var(--bg-dark);color:var(--text-light);line-height:1.6}
+    h1,h2,h3,h4{font-family:'Montserrat',sans-serif;margin-bottom:.5rem}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{color:var(--accent-light)}
 
-  /* … keep the rest of your CSS exactly as it is … */
-
-
-    /* Navbar  */
-    header{position:sticky;top:0;z-index:100;background:rgba(30,30,47,.85);backdrop-filter:blur(6px)}  
+    /* Navbar */
+    header{position:sticky;top:0;z-index:100;background:rgba(30,30,47,.85);backdrop-filter:blur(6px)}
     nav{max-width:var(--max-width);margin:0 auto;padding:1rem;display:flex;justify-content:space-between;align-items:center}
     .nav-links{display:flex;gap:1.25rem;font-weight:600;letter-spacing:.4px}
 
@@ -69,19 +66,18 @@
 
     /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
-    .gallery img,.gallery video{width:100%;border-radius:10px}
+    .gallery img{width:100%;border-radius:10px}
 
-    /* ---------- nicer spacing / hierarchy for the Analysis section ---------- */
+    /* Analysis hierarchy */
     #analysis h2{font-size:1.9rem;color:var(--accent-light);margin-bottom:1.2rem}
     #analysis h3{font-size:1.25rem;color:var(--accent);margin-top:1.75rem;margin-bottom:.6rem}
     #analysis ul{margin-left:1.2rem;margin-bottom:.8rem}
     #analysis li{margin-bottom:.35rem}
 
-    /* thumbnails + captions for theme screenshots */
+    /* theme screenshots */
     .theme-img{width:100%;max-width:520px;border-radius:8px;margin:.5rem 0 .4rem}
-    .img-caption{font-size:.9rem;opacity:.8;margin-bottom:1.2rem}
 
-    /* ---------- modal ---------- */
+    /* modal */
     .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;
            align-items:center;justify-content:center;z-index:200}
     .modal.hidden{display:none}
@@ -89,13 +85,13 @@
                    max-width:600px;width:90%;box-shadow:0 4px 12px rgba(0,0,0,.6)}
     .close{cursor:pointer;font-size:1.5rem;float:right;margin-top:-.5rem}
 
-    /* ---------- narrator pop‑up ---------- */
+    /* narrator pop‑up */
     .narrator{position:fixed;bottom:1.5rem;left:1.5rem;max-width:260px;
               background:var(--bg-light);padding:1rem 1.2rem;border-radius:10px;
               box-shadow:0 3px 10px rgba(0,0,0,.4);animation:fadein .4s}
     @keyframes fadein{from{opacity:0;transform:translateY(20px)}to{opacity:1}}
 
-    /* ---------- toast ---------- */
+    /* toast */
     .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--accent);
            color:var(--bg-dark);padding:.8rem 1.2rem;border-radius:10px;
            font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,.4);animation:pop .3s}
