@@ -20,9 +20,6 @@
       --max-width:1100px;
     }
 
-    /* smooth scroll */
-    html{scroll-behavior:smooth;}
-
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Inter',sans-serif;background:var(--bg-dark);color:var(--text-light);line-height:1.6}
     h1,h2,h3,h4{font-family:'Montserrat',sans-serif;margin-bottom:.5rem}
@@ -66,18 +63,19 @@
 
     /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
-    .gallery img{width:100%;border-radius:10px}
+    .gallery img,.gallery video{width:100%;border-radius:10px}
 
-    /* Analysis hierarchy */
+    /* ---------- nicer spacing / hierarchy for the Analysis section ---------- */
     #analysis h2{font-size:1.9rem;color:var(--accent-light);margin-bottom:1.2rem}
     #analysis h3{font-size:1.25rem;color:var(--accent);margin-top:1.75rem;margin-bottom:.6rem}
     #analysis ul{margin-left:1.2rem;margin-bottom:.8rem}
     #analysis li{margin-bottom:.35rem}
 
-    /* theme screenshots */
+    /* thumbnails + captions for theme screenshots */
     .theme-img{width:100%;max-width:520px;border-radius:8px;margin:.5rem 0 .4rem}
+    .img-caption{font-size:.9rem;opacity:.8;margin-bottom:1.2rem}
 
-    /* modal */
+    /* ---------- modal ---------- */
     .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;
            align-items:center;justify-content:center;z-index:200}
     .modal.hidden{display:none}
@@ -85,13 +83,13 @@
                    max-width:600px;width:90%;box-shadow:0 4px 12px rgba(0,0,0,.6)}
     .close{cursor:pointer;font-size:1.5rem;float:right;margin-top:-.5rem}
 
-    /* narrator pop‑up */
+    /* ---------- narrator pop‑up ---------- */
     .narrator{position:fixed;bottom:1.5rem;left:1.5rem;max-width:260px;
               background:var(--bg-light);padding:1rem 1.2rem;border-radius:10px;
               box-shadow:0 3px 10px rgba(0,0,0,.4);animation:fadein .4s}
     @keyframes fadein{from{opacity:0;transform:translateY(20px)}to{opacity:1}}
 
-    /* toast */
+    /* ---------- toast ---------- */
     .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--accent);
            color:var(--bg-dark);padding:.8rem 1.2rem;border-radius:10px;
            font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,.4);animation:pop .3s}
@@ -152,6 +150,7 @@
     The video walks through the exact routes shown in the map above, so you can compare the flow‑chart to the in‑game reality.
   </p>
 </section>
+
 
   <!-- 3. New Stuffs -->
   <section id="extras">
@@ -321,7 +320,8 @@
     Built with ❤️ by Shi Xuyuan | Hosted on GitHub Pages
   </footer>
 
-<!-- JavaScript (replace everything inside your current <script> … </script>) -->
+  <!-- JavaScript -->
+ <!-- JavaScript (replace everything inside your current <script> … </script>) -->
 <script>
 /* ===== QUIZ ===== */
 const submitBtn = document.getElementById('submit-quiz');
@@ -336,7 +336,7 @@ submitBtn.addEventListener('click', () => {
     if (selected && selected.value === correct) score++;
   });
   resultDiv.textContent =
-    You scored ${score} / ${questions.length}.  +
+    `You scored ${score} / ${questions.length}. ` +
     (score === questions.length ? 'Excellent!' : 'Try again to reach full enlightenment.');
   showToast();               // fake achievement
 });
@@ -348,19 +348,15 @@ const narratorLines = [
   'You think you’re in control of this website?',
   'Perhaps you’d like an achievement for reading?'
 ];
-
 function spawnNarrator() {
   const box = document.createElement('div');
   box.className = 'narrator';
   box.textContent = narratorLines[Math.floor(Math.random() * narratorLines.length)];
   document.body.appendChild(box);
   setTimeout(() => box.remove(), 6000);                    // vanish after 6 s
-  setTimeout(spawnNarrator, Math.random() * 45000 + 45000); // next bubble 45‑90 s later
+  setTimeout(spawnNarrator, Math.random() * 45000 + 45000); // 45‑90 s loop
 }
-
-/* first pop‑up now appears after 5 seconds */
-setTimeout(spawnNarrator, 5000);
-
+setTimeout(spawnNarrator, 10000); // first pop‑up after 10 s
 
 /* ===== ARTIST‑STATEMENT MODAL ===== */
 const modal = document.getElementById('statement-modal');
@@ -375,3 +371,5 @@ function showToast() {
   setTimeout(() => toast.classList.add('hidden'), 4000);
 }
 </script>
+</body>
+</html>
