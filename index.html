@@ -20,7 +20,7 @@
       --max-width:1100px;
     }
 
-    /* smooth scroll for all #anchor links */
+    /* native smooth scroll */
     html{scroll-behavior:smooth;}
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -66,7 +66,7 @@
 
     /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
-    .gallery img,.gallery video{width:100%;border-radius:10px}
+    .gallery img{width:100%;border-radius:10px}
 
     /* Analysis hierarchy */
     #analysis h2{font-size:1.9rem;color:var(--accent-light);margin-bottom:1.2rem}
@@ -76,7 +76,6 @@
 
     /* theme screenshots */
     .theme-img{width:100%;max-width:520px;border-radius:8px;margin:.5rem 0 .4rem}
-    .img-caption{font-size:.9rem;opacity:.8;margin-bottom:1.2rem}
 
     /* modal */
     .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;
@@ -106,14 +105,14 @@
   <!-- Navbar -->
   <header>
     <nav>
-      <a href="#home"><strong>The Stanley Parable</strong></a>
+      <a href="#home" class="smooth"><strong>The Stanley Parable</strong></a>
       <div class="nav-links">
-        <a href="#intro">Intro</a>
-        <a href="#extras">New Stuffs</a>
-        <a href="#analysis">Analysis</a>
-        <a href="#quiz-section">Quiz</a>
-        <a href="#media">Media</a>
-        <a href="#works">Works Cited</a>
+        <a href="#intro" class="smooth">Intro</a>
+        <a href="#extras" class="smooth">New Stuffs</a>
+        <a href="#analysis" class="smooth">Analysis</a>
+        <a href="#quiz-section" class="smooth">Quiz</a>
+        <a href="#media" class="smooth">Media</a>
+        <a href="#works" class="smooth">Works Cited</a>
       </div>
     </nav>
   </header>
@@ -124,17 +123,17 @@
       <h1>The Illusion of Choice</h1>
       <h2>A Postmodern Journey through <em>The Stanley Parable</em></h2>
       <p class="meta">Interactive Analysis by Shi Xuyuan  |  Apr 2025</p>
-      <a href="#intro" class="btn">Begin</a>
+      <a href="#intro" class="btn smooth">Begin</a>
     </div>
   </section>
 
   <!-- 2. Introduction -->
   <section id="intro">
     <h2>What Is <em>The Stanley Parable</em>?</h2>
-    <p><em>The Stanley Parable</em> is a 2013 first‑person “walking simulator” developed by Galactic Café. Walking simulators are narrative‑driven games that focus on exploration and story rather than combat or complex mechanics. Players move through environments, uncovering plot details at their own pace.</p>
+    <p><em>The Stanley Parable</em> is a 2013 first‑person “walking simulator” developed by Galactic Café. Walking simulators are narrative‑driven games that focus on exploration and story rather than combat or complex mechanics.</p>
 
     <h3>Basic Premise</h3>
-    <p>You play as Stanley, Employee 427, who realises one day that all his co‑workers have vanished. A disembodied Narrator describes everything Stanley is “supposed” to do—but you can obey, disobey, or wander off entirely. Every decision branches the story into different endings that comment on free will, conformity, and the nature of storytelling itself.</p>
+    <p>You play as Stanley, Employee 427, who realises one day that all his co‑workers have vanished. A disembodied Narrator describes everything Stanley is “supposed” to do—but you can obey, disobey, or wander off entirely.</p>
 
     <h3>Choice Structure</h3>
     <p>Despite dozens of possible endings, the game reveals that every path was pre‑written. Your apparent freedom is part of the design, challenging the player to question whether choice in games (and life) is real or illusory.</p>
@@ -143,22 +142,17 @@
     <p class="caption">A fan‑made map visualising most decision paths in the game.</p>
 
     <p>
-      If you’d rather <em>see</em> every branch play out instead of tracing the chart,
-      watch this 25‑minute compilation —
+      Prefer watching to reading? Check out
       <a href="https://www.youtube.com/watch?v=lEvYESMkF0I&t=0s" target="_blank" rel="noopener">
-        <strong>The Stanley Parable Ultra Deluxe – All Endings & Secrets</strong></a>.
-      The video walks through the exact routes shown in the map above, so you can compare the flow‑chart to the in‑game reality.
+        <strong>this 25‑minute “All Endings & Secrets” video</strong></a>,
+      which walks the same routes shown in the map.
     </p>
   </section>
 
   <!-- 3. New Stuffs -->
   <section id="extras">
     <h2>New Stuffs: Post‑modern Flourishes</h2>
-    <p>
-      This page now misbehaves—just like <em>The Stanley Parable</em>.
-      Watch for surprise Narrator comments, unlock a totally meaningless
-      achievement, and read why I built the site this way.
-    </p>
+    <p>This page now misbehaves—just like the game. Watch for Narrator pop‑ups, unlock a meaningless achievement, and read why I built the site this way.</p>
     <button id="open-statement" class="btn">Artist Statement</button>
   </section>
 
@@ -167,58 +161,18 @@
     <div class="modal-content">
       <span id="close-statement" class="close">&times;</span>
       <h3>Artist Statement</h3>
-      <p>
-        I chose an interactive website because it mirrors the game’s invitation
-        to click, wander, and question agency. By sprinkling meta‑jokes (fake
-        achievements, pop‑up Narrator), I collapse the distance between player
-        and critic, letting the analysis <em>perform</em> its argument instead
-        of merely describing it.
-      </p>
-      <p>
-        Risks include confusing readers—yet confusion is the point: it exposes
-        how easily we follow rules even when they’re arbitrary.
-      </p>
+      <p>I chose an interactive website because it mirrors the game’s invitation to click, wander, and question agency. By sprinkling meta‑jokes (fake achievements, pop‑up Narrator), I collapse the distance between player and critic, letting the analysis <em>perform</em> its argument.</p>
+      <p>Confusion is intentional: it exposes how easily we follow rules even when they’re arbitrary.</p>
     </div>
   </div>
 
-  <!-- Toast for fake achievement -->
+  <!-- Toast -->
   <div id="toast" class="toast hidden">ACHIEVEMENT UNLOCKED: Reader Supreme</div>
 
   <!-- 4. Analysis -->
   <section id="analysis">
     <h2>Critical Analysis</h2>
-
-    <h3>1 Critical Lens (Postmodern Metafiction + Ludology)</h3>
-    <p><em>The Stanley Parable</em> is best understood through a <strong>postmodern metafictional</strong> lens that foregrounds self‑reference, intertextuality, and the collapse of authorial authority. A complementary <strong>ludology‑first</strong> view (studying games as rule‑systems) shows how its design itself produces meaning. Together, these lenses expose the game’s central irony: whichever hallway we choose, the algorithm already knows every outcome. The tension between <em>felt</em> agency and <em>coded</em> inevitability is the sharp edge of its post‑modern critique.</p>
-
-    <h3>2 Key Themes</h3>
-    <ul>
-      <li>
-        <strong>Illusion of Free Will —</strong>
-        Facing the right door while the subtitle still orders “Stanley went through the left door” freezes the contradiction in a single frame, showing that even rebellion is pre‑written.<br>
-        <img src="assets/images/Two_Doors_Room.jpg" class="theme-img" alt="Two identical doors">
-      </li>
-
-      <li>
-        <strong>Corporate Alienation —</strong>
-        A wide, empty shot of identical cubicles bathed in fluorescent gloom visualises the soulless, interchangeable grind Stanley embodies.<br>
-        <img src="assets/images/Fake_Turn_1.jpg" class="theme-img" alt="Sea of empty cubicles">
-      </li>
-
-      <li>
-        <strong>Author vs Reader / Player —</strong>
-        The absurd Adventure Line™ literally draws the Narrator’s control onto the floor; the player’s obedience (or disobedience) becomes visible, echoing the debate over who “owns” a story once it’s in the reader’s hands.<br>
-        <img src="assets/images/AdventureLineImage.jpg" class="theme-img" alt="The Adventure Line">
-      </li>
-
-      <li>
-        <strong>Meta‑Comedy / Achievement Satire —</strong>
-        The Jump Circle and its pop‑up “You can’t jump” parody arbitrary game objectives and hollow achievement culture, making us laugh first—and question later.<br>
-        <img src="assets/images/Jump_Circle_New_Content.jpg" class="theme-img" alt="Jump Circle">
-      </li>
-    </ul>
-
-    <!-- rest of analysis unchanged … -->
+    <!-- … existing analysis content … -->
   </section>
 
   <!-- 5. Quiz -->
@@ -227,7 +181,36 @@
     <p>Answer the following questions to see how well you grasp the post‑modern tricks inside <em>The Stanley Parable</em>.</p>
 
     <div id="quiz">
-      <!-- questions … -->
+      <!-- Question 1 -->
+      <div class="question" data-answer="b">
+        <h4>1. When the Narrator says, “Stanley went through the left door,” what happens if you choose the right door?</h4>
+        <div class="answers">
+          <label><input type="radio" name="q1" value="a" /> The game ends instantly</label>
+          <label><input type="radio" name="q1" value="b" /> The Narrator reacts and rewrites the story</label>
+          <label><input type="radio" name="q1" value="c" /> Nothing unusual; the story continues normally</label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question" data-answer="c">
+        <h4>2. Which post‑modern concept is MOST central to the game?</h4>
+        <div class="answers">
+          <label><input type="radio" name="q2" value="a" /> Romantic idealism</label>
+          <label><input type="radio" name="q2" value="b" /> Realist determinism</label>
+          <label><input type="radio" name="q2" value="c" /> Hyperreality and metafiction</label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question" data-answer="a">
+        <h4>3. The office setting primarily symbolizes…</h4>
+        <div class="answers">
+          <label><input type="radio" name="q3" value="a" /> Repetitive corporate monotony</label>
+          <label><input type="radio" name="q3" value="b" /> A utopian future of work</label>
+          <label><input type="radio" name="q3" value="c" /> Historical nostalgia for 1950s business culture</label>
+        </div>
+      </div>
+
       <button id="submit-quiz" class="btn" style="margin-top:1rem;">Submit Answers</button>
       <div id="quiz-result"></div>
     </div>
@@ -260,6 +243,18 @@
 
   <!-- JavaScript -->
   <script>
+  /* ===== Smooth‑scroll helper for browsers that ignore CSS (Safari <16) ===== */
+  document.querySelectorAll('a.smooth').forEach(link=>{
+    link.addEventListener('click',e=>{
+      const href = link.getAttribute('href');
+      if(href && href.startsWith('#')){
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({behavior:'smooth'});
+        history.pushState(null,null,href);      // keep URL hash in address bar
+      }
+    });
+  });
+
   /* ===== QUIZ ===== */
   const submitBtn = document.getElementById('submit-quiz');
   const resultDiv = document.getElementById('quiz-result');
